@@ -4,10 +4,11 @@ class LogController < ApplicationController
   before_action :authorize, only: %i[index show]
   def index
     @log = Log.sorted
+    respond_to do |format|
     format.xlsx {
-        #response.headers[
-        #    'Content-Disposition'
-        #    ] = "attachment; filename='items.xlsx'"
+        response.headers[
+            'Content-Disposition'
+            ] = "attachment; filename='items.xlsx'"
           }
       format.html { render :index }
     end
