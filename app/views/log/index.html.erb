@@ -2,6 +2,8 @@
 
 <%= link_to("<< Back to List", "transactions") %>
 
+<%= link_to "Export to spreadsheet", transactions_path(format: "xlsx") %>
+
 <table class="listing" summary="Transaction Log">
     <tr class="header">
         <th style="padding:0 15px 0 0;">Check Out ID</th>

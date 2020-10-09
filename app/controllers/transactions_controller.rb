@@ -5,10 +5,7 @@ class TransactionsController < ApplicationController
   def index
     @transactions = Transaction.sorted
 
-    respond to do |format|
-      format.html
-      format.xlsx
-    end
+    
   end
 
   def show
