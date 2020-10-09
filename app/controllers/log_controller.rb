@@ -11,7 +11,7 @@ class LogController < ApplicationController
   end
 
   def show
-    @log = Log.find(params[:id])
+    @log = Log.sorted
     respond_to do |format|
       format.html
       format.xlsx
