@@ -1,11 +1,11 @@
 wb = xlsx_package.workbook
 
-wb.add_worksheet(name: "Transactions") do |sheet|
+wb.add_worksheet(name: "Logs") do |sheet|
   # this is the head row of your spreadsheet
   sheet.add_row %w(id name email status item Quantity)
 
   # each user is a row on your spreadsheet
-  @transactions.each do |transaction|
+  @log.each do |logs|
     sheet.add_row [id, requestor_name, requestor_email, type_, item_name,
     item_quantity]
   end
