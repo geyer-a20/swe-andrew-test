@@ -12,6 +12,10 @@ class LogController < ApplicationController
 
   def show
     @log = Log.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def log_params
