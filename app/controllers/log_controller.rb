@@ -4,7 +4,7 @@ class LogController < ApplicationController
   before_action :authorize, only: %i[index show]
   def index
     @log = Log.sorted
-    respond to do |format|
+    respond_to do |format|
       format.html
       format.xlsx
     end
