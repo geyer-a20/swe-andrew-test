@@ -5,9 +5,9 @@ class LogController < ApplicationController
   def index
     @log = Log.sorted
     format.xlsx {
-        response.headers[
-            'Content-Disposition'
-            ] = "attachment; filename='items.xlsx'"
+        #response.headers[
+        #    'Content-Disposition'
+        #    ] = "attachment; filename='items.xlsx'"
           }
       format.html { render :index }
     end
@@ -15,10 +15,6 @@ class LogController < ApplicationController
 
   def show
     @log = Log.sorted
-    respond_to do |format|
-      format.html
-      format.xlsx
-    end
   end
 
   def log_params
