@@ -13,10 +13,6 @@ class LogController < ApplicationController
     end
   end
 
-  def show
-    @log = Log.sorted
-  end
-
   def log_params
     params.require(:log).permit(:requestor_name, :requestor_email, :type_, :item_name, :item_quantity, :check_in)
   end
