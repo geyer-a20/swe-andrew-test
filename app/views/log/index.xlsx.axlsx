@@ -5,7 +5,7 @@ wb.add_worksheet(name: "Logs") do |sheet|
   sheet.add_row %w("id", "name", "email", "status", "item", "Quantity")
 
   # each user is a row on your spreadsheet
-  @log.each do |logs|
+  @log.each do |log|
     sheet.add_row [log.id, log.requestor_name, log.requestor_email, log.type_, log.item_name,
     log.item_quantity]
   end

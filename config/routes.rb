@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :password_resets
-  resources :log
+  resources :log, only: [:index] 
   root 'sessions#new'
 
   resources :transactions do
