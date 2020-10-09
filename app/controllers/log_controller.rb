@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class LogController < ApplicationController
-  before_action :authorize, only: %i[index show]
   def index
     @log = Log.sorted
     respond_to do |format|
