@@ -4,6 +4,11 @@ class TransactionsController < ApplicationController
   before_action :authorize, only: %i[create edit update delete destroy show new index]
   def index
     @transactions = Transaction.sorted
+
+    respond to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def show

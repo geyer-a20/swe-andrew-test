@@ -2,11 +2,15 @@
 
 <%= link_to("Check Out Item", new_transaction_path, :class => "action new") %>
 <%= link_to("View History", "log") %>
+<%= link_to "Export to spreadsheet", transactions_path(format: "xlsx") %>
 
 <table class="listing" summary="Transaction List">
     <tr class="header">
         <th>Check Out ID</th>
         <th>Checked Out By</th>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Checkout date</th>
     </tr>
     <% @transactions.each do |t| %>
     <tr>
