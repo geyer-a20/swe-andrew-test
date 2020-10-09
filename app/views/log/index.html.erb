@@ -1,0 +1,26 @@
+<h1>Transaction log</h1>
+
+<%= link_to("<< Back to List", "transactions") %>
+
+<table class="listing" summary="Transaction Log">
+    <tr class="header">
+        <th style="padding:0 15px 0 0;">Check Out ID</th>
+        <th style="padding:0 15px 0 0;">Checked Out By</th>
+        <th style="padding:0 15px 0 0;">Check Out Email</th>
+        <th style="padding:0 15px 0 0;">Type</th>
+        <th style="padding:0 15px 0 0;">Item Name</th>
+        <th style="padding:0 15px 0 0;">Item Quantity</th>
+        <th style="padding:0 15px 0 0;">Check in Date</th>
+    </tr>
+    <% @log.each do |t| %>
+    <tr>
+        <td style="padding:0 15px 0 0;"><%= t.id %></td>
+        <td style="padding:0 15px 0 0;"><%= t.requestor_name %></td>
+        <td style="padding:0 15px 0 0;"><%= t.requestor_email%></td>
+        <td style="padding:0 15px 0 0;"><%= t.type_%></td>
+        <td style="padding:0 15px 0 0;"><%= t.item_name%></td>
+        <td style="padding:0 15px 0 0;"><%= t.item_quantity%></td>
+        <td style="padding:0 15px 0 0;"><%= t.check_in%></td>
+    </tr>
+    <% end %>
+</table>

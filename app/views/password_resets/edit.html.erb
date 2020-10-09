@@ -1,0 +1,21 @@
+<div style="margin:auto;">
+<h1> Reset Password </h1>
+<%= bootstrap_form_for(@user, :url => password_reset_path(params[:id]), layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-3") do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class = "field font-weight-bold">
+      <%= f.password_field :password %>
+      <%= f.password_field :password_confirmation %>
+    </div> 
+      <%= f.submit "Update Password" %>
+<% end %>
+</div>

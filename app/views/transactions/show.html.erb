@@ -1,0 +1,39 @@
+
+<p><%= link_to("<< Back to All Check Out Items", transactions_path, :class => 'back-link') %></p>
+
+
+<div class="transaction show">
+
+  <h1>Show Check Out #<%=@transaction.id %> Details</h1>
+
+  <table summary="transaction Detail view">
+    <tr>
+      <th>Check Out Person Name</th>
+      <td><%= @transaction.requestor_name %></td>
+    </tr>
+    <tr>
+      <th>Check Out Person Email</th>
+      <td><%= @transaction.requestor_email %></td>
+    </tr>
+    <tr>
+      <th>Item Check Out</th>
+      <td><%= @transaction.item_name %></td>
+    </tr>
+    <tr>
+      <th>Quantity Checked Out</th>
+      <td><%= @transaction.item_quantity %></td>
+    </tr>
+    <tr>
+      <th>Reminder To Return Date</th>
+      <td><%= @transaction.remind_date %></td>
+    </tr>
+    <tr>
+      <th>Checked Out On</th>
+      <td><%= @transaction.created_at %></td>
+    </tr>
+    <tr>
+      <th>Checked Out Status</th>
+      <td><%= @transaction.type_ %></td>
+    </tr>
+  </table>
+</div>

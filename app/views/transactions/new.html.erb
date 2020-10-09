@@ -1,0 +1,32 @@
+
+<p><%= link_to("<< Back to List", transactions_path, :class => 'back-link') %></p>
+
+<div class="Transaction new">
+  <h1>Create Transaction</h1>
+
+  <%= form_for(@transaction, :url => transactions_path, :method => 'post') do |f| %>
+
+  <table summary="Transaction form fields">
+    <tr>
+      <th>Requestor Name</th>
+      <td><%= f.text_field(:requestor_name) %></td>
+    </tr>
+    <tr>
+      <th>Requestor Email</th>
+      <td><%= f.text_field(:requestor_email) %></td>
+    </tr>
+    <tr>
+      <th>Item Name</th>
+      <td><%= f.text_field(:item_name) %></td>
+    </tr>
+    <tr>
+      <th>Quantity</th>
+      <td><%= f.number_field(:item_quantity) %></td>
+    </tr>
+  </table>
+
+  <div class="form-buttons">
+    <%= f.submit("Check Out Item") %>
+  </div>
+  <% end %>
+</div>
