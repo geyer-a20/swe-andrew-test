@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :password_resets
   resources :log
+  match '/log/:format' => 'log#index'
   root 'sessions#new'
 
   resources :transactions do
