@@ -2,7 +2,7 @@ wb = xlsx_package.workbook
 
 wb.add_worksheet(name: "Logs") do |sheet|
   # this is the head row of your spreadsheet
-  sheet.add_row %w(id name email status item Quantity)
+  sheet.add_row %w("id", "name", "email", "status", "item", "Quantity")
 
   # each user is a row on your spreadsheet
   @log.each do |logs|
